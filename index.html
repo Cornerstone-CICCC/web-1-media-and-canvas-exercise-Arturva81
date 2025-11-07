@@ -3,21 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <title>Media Exercise</title>
 </head>
 <body>
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
-
+    <h1 class="title">Audio Section</h1>
+     <section class="audio">
+       <audio controls>
+         <source src="./assets/audio/piano.wav" type="audio/mpeg">
+         Your browser does not support the audio element.
+       </audio>
+     </section>
     <!-- VIDEO HTML GOES HERE -->
+    <h1 class="title">Video Section</h1>
+    <section class="video">
+      <video controls width="320" height="240" poster="./assets/images/poster.jpg">
+        <source src="./assets/video/ocean.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
 
     <!-- IMAGE MAP HTML GOES HERE-->
-
+    <h1 class="title">Image Map Section</h1>
+    <section class="image-map">
+      <img src="./assets/images/fruit_table.jpg" alt="Fruit table" usemap="#image-map">
+      <map name="image-map">
+        <area target="_blank" alt="Lavender" title="Lavender" href="https://en.wikipedia.org/wiki/Lavandula" coords="75,100,300,550" shape="rect">
+        <area target="_blank" alt="Oranges" title="Oranges" href="https://en.wikipedia.org/wiki/Orange_(fruit)" coords="360, 360, 550, 600" shape="rect">
+        <area target="_blank" alt="Coffee" title="Coffee" href="https://en.wikipedia.org/wiki/Coffee" coords="350, 125, 500, 300" shape="rect">
+      </map>
+    </section>
     <!-- CANVAS HTML GOES HERE -->
+    <h1 class="title">Canvas Section</h1>
+    <section class="canvas">
+      <h2 class="subs">My Grade after this Exercise</h2>
+      <canvas id="myCanvas" width="320" height="240"></canvas>
+      <h2 class="subs">Stonks</h2>
+    </section>
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.getElementById('myCanvas');
+    const context = canvas.getContext('2d');
+
+    context.beginPath();
+    context.moveTo( 10, 230);
+    context.lineTo(80, 120);
+    context.lineTo(150, 180);
+    context.lineTo(220, 60);
+    context.lineTo(250, 90);
+    context.lineTo(300, 10);
+    context.strokeStyle = 'blue';
+    context.lineWidth = 5;
+    context.stroke();
   </script>
 </body>
 </html>
